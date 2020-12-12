@@ -1,5 +1,12 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
-import './plugins/element.js'
+import Router from 'vue-router'
+import { Button, Select } from 'element-ui';
 
-createApp(App).mount('#app')
+Vue.config.productionTip = false
+Vue.use(Router)
+Vue.use(Button,{ size: 'small', zIndex: 3000 })
+Vue.use(Select,{ size: 'small', zIndex: 3000 })
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
