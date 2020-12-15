@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <el-container style="height:100%; border: 1px solid #eee">
+    <Menu/>
+    <el-container direction="vertical">
+      <Header/>
+      <el-container style="height:80%; border: 1px solid #eee">
+        <ListBook/>
+      </el-container>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Menu from './components/Menu.vue'
+  import Header from './components/Header.vue'
+  import ListBook from './components/ListBook.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Menu,Header,ListBook
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html,body{height:100%; margin:0;}
 </style>
