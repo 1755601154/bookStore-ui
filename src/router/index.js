@@ -9,11 +9,17 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index
+      component: Index,
+      meta: {
+        requireLogin: true
+      }
     }, {
       path: '/login',
       name: 'Login',
       component: Login,
+      meta: {
+        requireLogin: false
+      }
     }
   ]
 })

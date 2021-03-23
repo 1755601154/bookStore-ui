@@ -10,3 +10,17 @@ new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireLogin)) {
+    if (localStorage.getItem('token')) {
+      next()
+    } else {
+      next({
+        path: '/login'
+      })
+    }
+  } else {
+    next()
+  }
+})
